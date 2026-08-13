@@ -1,3 +1,4 @@
+//ejercicio 4 polimorfismo
 //Sobre la jerarquía del ejercicio 3, agregá:
 //
 //    EmpleadoPorHoras extends Empleado con horasTrabajadas y valorHora, y su propia versión de calcularSueldo() (horas × valor hora, sin bono por antigüedad).
@@ -73,3 +74,8 @@ const empleados: Empleado[] = [empleadoFijo, empleadoPorComision, empleadoTurnoM
 empleados.forEach(empleado => {
   console.log(`saldo correspondiente: ${empleado.calcularSueldo()}`)
 })
+//funcion de suma
+function sumarSalarios(empleados: Empleado[]): number {
+  return empleados.reduce((total, empleado) => total + empleado.calcularSueldo(), 0);
+}
+console.log(`total de salarios: ${sumarSalarios(empleados)}`);
